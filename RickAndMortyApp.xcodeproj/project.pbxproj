@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		02B82D29B5E69549B4A92831 /* Pods_RickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AEB21492C248425CB80F08 /* Pods_RickAndMortyApp.framework */; };
 		2791EA4A29BB0B300036DF7B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */; };
-		2791EA5229BB0DCE0036DF7B /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5129BB0DCE0036DF7B /* CharacterListView.swift */; };
+		2791EA5229BB0DCE0036DF7B /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */; };
 		2791EA5429BB0DE80036DF7B /* CharacterListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */; };
 		2791EA5629BB0E350036DF7B /* CharacterListViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5529BB0E350036DF7B /* CharacterListViewBuilder.swift */; };
 		2791EA5A29BB0E5A0036DF7B /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5929BB0E5A0036DF7B /* CharacterDetailView.swift */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2791EA5129BB0DCE0036DF7B /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewCoordinator.swift; sourceTree = "<group>"; };
 		2791EA5529BB0E350036DF7B /* CharacterListViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewBuilder.swift; sourceTree = "<group>"; };
 		2791EA5929BB0E5A0036DF7B /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		2791EA5C29BB129D0036DF7B /* CharacterListView */ = {
 			isa = PBXGroup;
 			children = (
-				2791EA5129BB0DCE0036DF7B /* CharacterListView.swift */,
+				2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */,
 				2791EA5E29BB12B80036DF7B /* CharacterListViewStoryboard.storyboard */,
 			);
 			path = CharacterListView;
@@ -342,7 +342,7 @@
 				2791EA5429BB0DE80036DF7B /* CharacterListViewCoordinator.swift in Sources */,
 				27A8FB4529B8A63E007EB7D2 /* ViewController.swift in Sources */,
 				2791EA6129BB12F90036DF7B /* CharacterListViewModel.swift in Sources */,
-				2791EA5229BB0DCE0036DF7B /* CharacterListView.swift in Sources */,
+				2791EA5229BB0DCE0036DF7B /* CharacterListViewController.swift in Sources */,
 				27A8FB4129B8A63E007EB7D2 /* AppDelegate.swift in Sources */,
 				2791EA6329BF1EDA0036DF7B /* ApiEndpoint.swift in Sources */,
 				2791EA7129BF27070036DF7B /* CharacterLocationModel.swift in Sources */,

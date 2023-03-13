@@ -11,7 +11,8 @@ class CharacterListViewBuilder {
   
   func build() -> UIViewController? {
     let characterListViewStoryboard = UIStoryboard(name: "CharacterListViewStoryboard", bundle: nil)
-    let characterListViewController = characterListViewStoryboard.instantiateViewController(withIdentifier: "CharacterListViewStoryboard")
+    let characterListViewController = characterListViewStoryboard.instantiateViewController(withIdentifier: "CharacterListViewStoryboard") as! CharacterListViewController
+    characterListViewController.viewModel = CharacterListViewModel()
     return characterListViewController
   }
 }

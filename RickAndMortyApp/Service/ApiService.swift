@@ -12,7 +12,7 @@ final class ApiService {
   private init() {
     
   }
-  public func execute(_ request: ApiRequest, completion: @escaping () -> Void ){
-    
-  }
+//  public func execute<T: Codable>(_ request: ApiRequest, completion: @escaping (Result<String,Error>) -> Void ){
+//    
+//  }
 }
