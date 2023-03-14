@@ -12,6 +12,7 @@ final class ApiRequest {
      static let baseUrl = "https://rickandmortyapi.com/api"
   }
   private let endpoint: ApiEndpoint
+  static let characterListRequest = ApiRequest(endpoint: .character)
   private let queryParameters: [URLQueryItem]
   private var urlString: String{
     var string = Constants.baseUrl

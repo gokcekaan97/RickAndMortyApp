@@ -8,7 +8,7 @@
 import Foundation
 
 struct LocationModel: Codable{
-  let id:String
+  let id:Int
   let name:String
   let type:String
   let dimension:String

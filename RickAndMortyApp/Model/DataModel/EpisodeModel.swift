@@ -8,7 +8,7 @@
 import Foundation
 
 struct EpisodeModel:Codable{
-  let id:String
+  let id:Int
   let name:String
   let airDate:String
   let episode:String

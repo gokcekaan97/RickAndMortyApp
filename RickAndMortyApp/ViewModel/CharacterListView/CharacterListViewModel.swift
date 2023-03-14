@@ -8,5 +8,14 @@
 import Foundation
 
 class CharacterListViewModel {
-  
+  func getList() {
+    ApiService.shared.execute(.characterListRequest, expecting: CharacterListResponse.self){ result in
+      switch result{
+      case .success(let character):
+        print(String(describing: character))
+      case .failure(let error):
+        print(String(describing: error))
+      }
+    }
+  }
 }
