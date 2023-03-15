@@ -8,6 +8,7 @@
 import Foundation
 
 enum ApiEndpoint: String {
+  case mainPath = "/api"
   case character = "/character"
   case location = "/location"
   case episode = "/episode"

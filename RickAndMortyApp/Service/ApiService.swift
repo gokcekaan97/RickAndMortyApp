@@ -21,8 +21,10 @@ final class ApiService {
   public func execute<T: Codable>(_ request: ApiRequest,
                                   expecting type: T.Type,
                                   completion: @escaping (Result<T,Error>) -> Void ){
+    
     guard let url = request.url else { return completion(.failure(ApiServiceError.urlNil)) }
-    AF.request(url).responseDecodable(of: type.self){response in
+    
+    AF.request(url, method:.get).responseDecodable(of: type.self){response in
       switch response.result {
       case.failure(_):
         completion(.failure(ApiServiceError.noData))

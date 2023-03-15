@@ -11,6 +11,8 @@ import UIKit
 class CharacterListViewController: UIViewController{
   public var viewModel: CharacterListViewModel!
   override func viewDidLoad() {
-    viewModel.getList()
+    navigationController?.navigationBar.prefersLargeTitles = true
+    title = "Characters"
+    
   }
 }

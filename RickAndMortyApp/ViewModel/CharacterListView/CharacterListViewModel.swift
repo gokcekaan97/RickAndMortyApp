@@ -8,14 +8,41 @@
 import Foundation
 
 class CharacterListViewModel {
+  var characterList: [CharacterModel]?
+  let characterListUseCase = CharacterListUseCase()
+  init(){
+    getList()
+  }
+  
   func getList() {
-    ApiService.shared.execute(.characterListRequest, expecting: CharacterListResponse.self){ result in
-      switch result{
+    characterListUseCase.getCharacterList { result in
+      switch result {
       case .success(let character):
-        print(String(describing: character))
+        self.characterList = character.results
       case .failure(let error):
-        print(String(describing: error))
+        print(error)
       }
     }
   }
 }
+
+
+protocol CharacterListUseCaseType {
+  func getCharacterList(completion: @escaping (Result<CharacterListResponse,Error>) -> Void )
+}
+
+struct CharacterListUseCase: CharacterListUseCaseType {
+
+  func getCharacterList(completion: @escaping (Result<CharacterListResponse,Error>) -> Void ) {
+    ApiService.shared.execute(.characterListRequest, expecting: CharacterListResponse.self){ result in
+      switch result{
+      case .success(let character):
+        completion(.success(character))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+}
+
+

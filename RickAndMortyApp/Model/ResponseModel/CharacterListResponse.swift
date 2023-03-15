@@ -8,12 +8,12 @@
 import Foundation
 
 struct CharacterListResponse: Codable{
-  struct Info:Codable{
-    let count: Int
-    let pages: Int
-    let next: String?
-    let prev: String?
-  }
   let info: Info
   let results: [CharacterModel]
+}
+struct Info:Codable{
+  let count: Int
+  let pages: Int
+  let next: String?
+  let prev: String?
 }
