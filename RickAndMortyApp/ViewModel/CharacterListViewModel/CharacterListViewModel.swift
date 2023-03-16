@@ -26,7 +26,6 @@ class CharacterListViewModel {
   }
 }
 
-
 protocol CharacterListUseCaseType {
   func getCharacterList(completion: @escaping (Result<CharacterListResponse,Error>) -> Void )
 }
