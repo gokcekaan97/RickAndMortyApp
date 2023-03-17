@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02B82D29B5E69549B4A92831 /* Pods_RickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AEB21492C248425CB80F08 /* Pods_RickAndMortyApp.framework */; };
+		2760E1BC29C47BAF00C178B4 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760E1BB29C47BAF00C178B4 /* GridFlowLayout.swift */; };
 		2791EA4A29BB0B300036DF7B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */; };
 		2791EA5229BB0DCE0036DF7B /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */; };
 		2791EA5429BB0DE80036DF7B /* CharacterListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2760E1BB29C47BAF00C178B4 /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
 		2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewCoordinator.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				2791EA7829C0B6780036DF7B /* UIView+Extension.swift */,
+				2760E1BB29C47BAF00C178B4 /* GridFlowLayout.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				2791EA6929BF259D0036DF7B /* CharacterModel.swift in Sources */,
 				2791EA5629BB0E350036DF7B /* CharacterListViewBuilder.swift in Sources */,
 				27A8FB4B29B8A63E007EB7D2 /* RickAndMortyApp.xcdatamodeld in Sources */,
+				2760E1BC29C47BAF00C178B4 /* GridFlowLayout.swift in Sources */,
 				2791EA6729BF243A0036DF7B /* ApiService.swift in Sources */,
 				2791EA5429BB0DE80036DF7B /* CharacterListViewCoordinator.swift in Sources */,
 				27A8FB4529B8A63E007EB7D2 /* ViewController.swift in Sources */,
