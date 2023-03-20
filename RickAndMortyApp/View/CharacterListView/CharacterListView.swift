@@ -16,15 +16,14 @@ final class CharacterListView: UIView {
     return loadIcon
   }()
   lazy var characterCollectionView: UICollectionView = {
-    let collectionLayout = UICollectionViewLayout()
+    let collectionLayout = UICollectionViewFlowLayout()
+    collectionLayout.scrollDirection = .vertical
+    collectionLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-//    collectionView.isHidden = true
-//    collectionView.alpha = 0
-//    collectionView.delegate = self
-//    collectionView.dataSource = self
-    collectionView.register(UICollectionViewCell.self,
-                            forCellWithReuseIdentifier: "CustomCell")
+    collectionView.isHidden = true
+    collectionView.register(CharacterListViewCell.self,
+                            forCellWithReuseIdentifier: CharacterListViewCell.cellIdentifier)
     return collectionView
   }()
   override init(frame: CGRect) {
@@ -32,10 +31,10 @@ final class CharacterListView: UIView {
     backgroundColor = .systemBlue
     translatesAutoresizingMaskIntoConstraints = false
     addSubview(characterCollectionView)
-//    addSubview(loadIcon)
+    addSubview(loadIcon)
     AddConstrains()
-//    loadIcon.startAnimating()
-//    SetUpCollectionView()
+    loadIcon.startAnimating()
+    SetUpCollectionView()
   }
   
   required init?(coder: NSCoder) {
@@ -43,26 +42,22 @@ final class CharacterListView: UIView {
   }
   private func AddConstrains(){
     NSLayoutConstraint.activate([
-//      loadIcon.widthAnchor.constraint(equalToConstant: 100),
-//      loadIcon.heightAnchor.constraint(equalToConstant: 100),
-//      loadIcon.centerXAnchor.constraint(equalTo: centerXAnchor),
-//      loadIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
+      loadIcon.widthAnchor.constraint(equalToConstant: 100),
+      loadIcon.heightAnchor.constraint(equalToConstant: 100),
+      loadIcon.centerXAnchor.constraint(equalTo: centerXAnchor),
+      loadIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
       characterCollectionView.topAnchor.constraint(equalTo: topAnchor),
       characterCollectionView.rightAnchor.constraint(equalTo: rightAnchor),
       characterCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
       characterCollectionView.leftAnchor.constraint(equalTo: leftAnchor)
     ])
   }
-//  private func SetUpCollectionView(){
-//    DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-////      self.loadIcon.stopAnimating()
-//
-//      self.characterCollectionView.isHidden = false
-//      UIView.animate(withDuration: 0.4){
-//        self.characterCollectionView.alpha = 1
-//      }
-//    })
-//  }
+  private func SetUpCollectionView(){
+    DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+      self.loadIcon.stopAnimating()
+      self.characterCollectionView.isHidden = false
+    })
+  }
 
 }
 

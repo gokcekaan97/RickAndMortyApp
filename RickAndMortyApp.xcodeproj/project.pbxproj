@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02B82D29B5E69549B4A92831 /* Pods_RickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AEB21492C248425CB80F08 /* Pods_RickAndMortyApp.framework */; };
 		2760E1BC29C47BAF00C178B4 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760E1BB29C47BAF00C178B4 /* GridFlowLayout.swift */; };
+		2760E1BE29C5ABC600C178B4 /* CharacterListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760E1BD29C5ABC600C178B4 /* CharacterListViewCell.swift */; };
 		2791EA4A29BB0B300036DF7B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */; };
 		2791EA5229BB0DCE0036DF7B /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */; };
 		2791EA5429BB0DE80036DF7B /* CharacterListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		2760E1BB29C47BAF00C178B4 /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
+		2760E1BD29C5ABC600C178B4 /* CharacterListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewCell.swift; sourceTree = "<group>"; };
 		2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewCoordinator.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				2791EA7D29C33E100036DF7B /* CharacterListView.swift */,
+				2760E1BD29C5ABC600C178B4 /* CharacterListViewCell.swift */,
 			);
 			path = CharacterListView;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				2791EA6F29BF26640036DF7B /* CharacterOriginModel.swift in Sources */,
 				27A8FB4329B8A63E007EB7D2 /* SceneDelegate.swift in Sources */,
 				2791EA6529BF24290036DF7B /* ApiRequest.swift in Sources */,
+				2760E1BE29C5ABC600C178B4 /* CharacterListViewCell.swift in Sources */,
 				2791EA6B29BF25AD0036DF7B /* LocationModel.swift in Sources */,
 				2791EA5A29BB0E5A0036DF7B /* CharacterDetailView.swift in Sources */,
 				2791EA7329BF27B20036DF7B /* CharacterInfo.swift in Sources */,

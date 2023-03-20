@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class CharacterListViewModel {
-  var characterList: [CharacterModel]?
+  var characterList = PublishSubject<[CharacterModel]>()
   let characterListUseCase = CharacterListUseCase()
   init(){
     getList()
@@ -18,7 +19,8 @@ class CharacterListViewModel {
     characterListUseCase.getCharacterList { result in
       switch result {
       case .success(let character):
-        self.characterList = character.results
+        self.characterList.onNext(character.results)
+//        self.characterList = character.results
       case .failure(let error):
         print(error)
       }
