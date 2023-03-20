@@ -28,8 +28,6 @@ final class CharacterListViewController: UIViewController{
 
   private func setUpView(){
     view.addSubview(characterListView)
-//    characterListView.characterCollectionView.dataSource = self
-//    characterListView.characterCollectionView.delegate = self
     NSLayoutConstraint.activate([
       characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
@@ -65,7 +63,6 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterListViewCell.cellIdentifier, for: indexPath) as? CharacterListViewCell else {fatalError("cell not found")}
-    cell.nameLabel.text = "ss"
     return cell
   }
 

@@ -34,7 +34,6 @@ class CharacterListViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     contentView.backgroundColor = .secondarySystemBackground
-//    contentView.layer.cornerRadius = 30
     setupViews()
     addConstraints()
   }
@@ -51,9 +50,6 @@ class CharacterListViewCell: UICollectionViewCell {
     contentView.addSubview(imageView)
     contentView.addSubview(nameLabel)
     contentView.addSubview(statusLabel)
-//    let width = (UIScreen.main.bounds.width - 30) / 2
-//    let size = CGSize(width: width, height: (width * 1.5))
-//    contentView.sizeThatFits(size)
   }
   private func addConstraints(){
     NSLayoutConstraint.activate([
@@ -70,9 +66,6 @@ class CharacterListViewCell: UICollectionViewCell {
       imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
       imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5)
     ])
-    imageView.backgroundColor = .systemCyan
-    statusLabel.backgroundColor = .red
-    nameLabel.backgroundColor = .systemBlue
   }
   public func configure(){
     

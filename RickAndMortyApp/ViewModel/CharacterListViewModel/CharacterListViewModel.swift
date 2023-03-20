@@ -20,7 +20,6 @@ class CharacterListViewModel {
       switch result {
       case .success(let character):
         self.characterList.onNext(character.results)
-//        self.characterList = character.results
       case .failure(let error):
         print(error)
       }
