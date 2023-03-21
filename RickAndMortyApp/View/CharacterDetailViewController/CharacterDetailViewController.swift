@@ -23,9 +23,10 @@ class CharacterDetailViewController: UIViewController {
   private func setUpView(){
     view.addSubview(characterDetailView)
     NSLayoutConstraint.activate([
+//      characterDetailView.heightAnchor.constraint(equalToConstant: 1500),
+      characterDetailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
       characterDetailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       characterDetailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-      characterDetailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
       characterDetailView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor)
     ])
   }
@@ -36,7 +37,15 @@ class CharacterDetailViewController: UIViewController {
     characterDetailView.imageView.kf.setImage(with: imageUrl)
     characterDetailView.nameLabel.text = character.name
     characterDetailView.statusLabel.text = "Status: \(character.status.text)"
-    character.
+    characterDetailView.locationLabel.text = character.location.name
+    characterDetailView.genderLabel.text = character.gender.text
+    characterDetailView.speciesLabel.text = character.species
+    characterDetailView.originLabel.text = character.origin.name
+    characterDetailView.episodeLabel.text = ""
+    for str in character.episode {
+      characterDetailView.episodeLabel.text! += str + "\n"
+    }
+    
   }
 
 }
