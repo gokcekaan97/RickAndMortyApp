@@ -44,7 +44,7 @@ final class CharacterListViewController: UIViewController{
       let imageUrl = URL(string: model.image)
       cell.imageView.kf.setImage(with: imageUrl)
       cell.nameLabel.text = model.name
-      cell.statusLabel.text = "Status: \(model.status.rawValue)"
+      cell.statusLabel.text = "Status: \(model.status.text)"
     }.disposed(by: disposeBag)
   }
   private func callMoreCell(indexPath:IndexPath){
@@ -55,6 +55,13 @@ final class CharacterListViewController: UIViewController{
 }
 
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let characterId = viewModel.characters[indexPath.row].id
+    guard let myNavigation = self.navigationController else { return }
+    let characterDetailCoordinator = CharacterDetailViewCoordinator(router: myNavigation,character: viewModel.characters[indexPath.row])
+    characterDetailCoordinator.pushCoordinator(animated: true, completion: nil)
+  }
   
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     callMoreCell(indexPath: indexPath)

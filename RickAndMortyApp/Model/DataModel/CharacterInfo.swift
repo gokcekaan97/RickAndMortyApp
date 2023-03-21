@@ -11,6 +11,14 @@ enum CharacterStatus: String, Codable{
   case alive = "Alive"
   case unknown = "unknown"
   case dead = "Dead"
+  var text:String{
+    switch self{
+    case .alive,.dead:
+      return rawValue
+    case .unknown:
+      return "Unknown"
+    }
+  }
 }
 
 enum CharacterGender: String, Codable{
@@ -18,4 +26,12 @@ enum CharacterGender: String, Codable{
   case female = "Female"
   case unknown = "unknown"
   case genderless = "Genderless"
+  var text:String{
+    switch self {
+    case .male,.female,.genderless:
+      return rawValue
+    case .unknown:
+      return "Unknown"
+    }
+  }
 }

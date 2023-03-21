@@ -14,7 +14,7 @@ class CharacterListViewCell: UICollectionViewCell {
     let image = UIImageView()
     image.contentMode = .scaleAspectFill
     image.layer.masksToBounds = true
-    image.layer.cornerRadius = 20
+    image.layer.cornerRadius = 12
     image.translatesAutoresizingMaskIntoConstraints = false
     return image
   }()
@@ -37,7 +37,7 @@ class CharacterListViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     contentView.backgroundColor = .secondarySystemBackground
-    contentView.layer.cornerRadius = 20
+    contentView.layer.cornerRadius = 12
     setupViews()
     addConstraints()
   }
@@ -57,21 +57,18 @@ class CharacterListViewCell: UICollectionViewCell {
   }
   private func addConstraints(){
     NSLayoutConstraint.activate([
-      nameLabel.heightAnchor.constraint(equalToConstant: 50),
-      statusLabel.heightAnchor.constraint(equalToConstant: 50),
-      statusLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-      statusLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
-      nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-      nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
-      statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3),
-      nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -3),
-      imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3),
-      imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-      imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
-      imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5)
+      nameLabel.heightAnchor.constraint(equalToConstant: 32),
+      statusLabel.heightAnchor.constraint(equalToConstant: 32),
+      statusLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+      statusLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
+      nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+      nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
+      statusLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+      nameLabel.bottomAnchor.constraint(equalTo: statusLabel.topAnchor, constant: -4),
+      imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -4),
+      imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 4),
+      imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -4),
+      imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4)
     ])
-  }
-  public func configure(){
-    
   }
 }
