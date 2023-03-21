@@ -8,10 +8,13 @@
 import UIKit
 
 class CharacterListViewCell: UICollectionViewCell {
+  
   static let cellIdentifier = "CharacterCollectionViewCell"
   public var imageView: UIImageView = {
     let image = UIImageView()
-    image.contentMode = .scaleAspectFit
+    image.contentMode = .scaleAspectFill
+    image.layer.masksToBounds = true
+    image.layer.cornerRadius = 20
     image.translatesAutoresizingMaskIntoConstraints = false
     return image
   }()
@@ -34,6 +37,7 @@ class CharacterListViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     contentView.backgroundColor = .secondarySystemBackground
+    contentView.layer.cornerRadius = 20
     setupViews()
     addConstraints()
   }

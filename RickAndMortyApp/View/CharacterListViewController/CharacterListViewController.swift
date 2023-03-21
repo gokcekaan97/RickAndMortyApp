@@ -23,7 +23,7 @@ final class CharacterListViewController: UIViewController{
     title = "Characters"
     setUpView()
     setCollectionViewCell()
-    characterListView.characterCollectionView.reloadData()
+    
   }
 
   private func setUpView(){
@@ -44,13 +44,22 @@ final class CharacterListViewController: UIViewController{
       let imageUrl = URL(string: model.image)
       cell.imageView.kf.setImage(with: imageUrl)
       cell.nameLabel.text = model.name
-      cell.statusLabel.text = model.status.rawValue
+      cell.statusLabel.text = "Status: \(model.status.rawValue)"
     }.disposed(by: disposeBag)
-    
+  }
+  private func callMoreCell(indexPath:IndexPath){
+    if indexPath.row == viewModel.characters.endIndex - 2{
+      viewModel.getMore()
+    }
   }
 }
 
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    callMoreCell(indexPath: indexPath)
+  }
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = (UIScreen.main.bounds.width - 30) / 2
     return CGSize(width: width,
