@@ -7,8 +7,8 @@ target 'RickAndMortyApp' do
 
   # Pods for RickAndMortyApp
 pod 'Alamofire'
-pod 'Kingfisher'
 pod 'RxGesture'
 pod 'RxSwift'
+pod 'Kingfisher'
 pod 'RxCocoa'
 end

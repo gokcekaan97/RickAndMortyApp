@@ -97,23 +97,21 @@
 		2760E1C029C9BA8600C178B4 /* CharacterDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2760E1C529C9BB5000C178B4 /* CharacterDetailViewBuilder.swift */,
+				2760E1C729C9BBE500C178B4 /* CharacterDetailViewCoordinator.swift */,
 				2760E1C129C9BAB700C178B4 /* CharacterDetailViewController.swift */,
 				2760E1C929C9CC3B00C178B4 /* CharacterDetailViewStoryboard.storyboard */,
-			);
-			path = CharacterDetailViewController;
-			sourceTree = "<group>";
-		};
-		2760E1CB29C9CE5000C178B4 /* CharacterDetailView */ = {
-			isa = PBXGroup;
-			children = (
+				2791EA5929BB0E5A0036DF7B /* CharacterDetailViewModel.swift */,
 				2760E1CC29C9CE6600C178B4 /* CharacterDetailView.swift */,
 			);
-			path = CharacterDetailView;
+			path = CharacterDetailViewController;
 			sourceTree = "<group>";
 		};
 		2791EA4B29BB0C910036DF7B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				27A8FB4E29B8A63F007EB7D2 /* LaunchScreen.storyboard */,
+				27A8FB4C29B8A63F007EB7D2 /* Assets.xcassets */,
 				27A8FB4029B8A63E007EB7D2 /* AppDelegate.swift */,
 				27A8FB4229B8A63E007EB7D2 /* SceneDelegate.swift */,
 				2791EA4929BB0B300036DF7B /* MainStoryboard.storyboard */,
@@ -131,33 +129,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		2791EA4D29BB0CAA0036DF7B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				27A8FB4E29B8A63F007EB7D2 /* LaunchScreen.storyboard */,
-				27A8FB4C29B8A63F007EB7D2 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		2791EA4E29BB0CB60036DF7B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2760E1CB29C9CE5000C178B4 /* CharacterDetailView */,
 				2760E1C029C9BA8600C178B4 /* CharacterDetailViewController */,
-				2791EA7C29C33DEA0036DF7B /* CharacterListView */,
 				2791EA5C29BB129D0036DF7B /* CharacterListViewController */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2791EA4F29BB0CF40036DF7B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2791EA5829BB0E4D0036DF7B /* CharacterDetailViewModel */,
-				2791EA5729BB0E3A0036DF7B /* CharacterListViewModel */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2791EA5029BB0D160036DF7B /* Model */ = {
@@ -167,26 +145,6 @@
 				2791EA7429C075710036DF7B /* DataModel */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2791EA5729BB0E3A0036DF7B /* CharacterListViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */,
-				2791EA5529BB0E350036DF7B /* CharacterListViewBuilder.swift */,
-				2791EA6029BB12F90036DF7B /* CharacterListViewModel.swift */,
-			);
-			path = CharacterListViewModel;
-			sourceTree = "<group>";
-		};
-		2791EA5829BB0E4D0036DF7B /* CharacterDetailViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2791EA5929BB0E5A0036DF7B /* CharacterDetailViewModel.swift */,
-				2760E1C529C9BB5000C178B4 /* CharacterDetailViewBuilder.swift */,
-				2760E1C729C9BBE500C178B4 /* CharacterDetailViewCoordinator.swift */,
-			);
-			path = CharacterDetailViewModel;
 			sourceTree = "<group>";
 		};
 		2791EA5B29BB0ECB0036DF7B /* Service */ = {
@@ -202,6 +160,11 @@
 		2791EA5C29BB129D0036DF7B /* CharacterListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2760E1BD29C5ABC600C178B4 /* CharacterListViewCell.swift */,
+				2791EA5329BB0DE80036DF7B /* CharacterListViewCoordinator.swift */,
+				2791EA5529BB0E350036DF7B /* CharacterListViewBuilder.swift */,
+				2791EA6029BB12F90036DF7B /* CharacterListViewModel.swift */,
+				2791EA7D29C33E100036DF7B /* CharacterListView.swift */,
 				2791EA5129BB0DCE0036DF7B /* CharacterListViewController.swift */,
 				2791EA5E29BB12B80036DF7B /* CharacterListViewStoryboard.storyboard */,
 			);
@@ -229,15 +192,6 @@
 			path = ResponseModel;
 			sourceTree = "<group>";
 		};
-		2791EA7C29C33DEA0036DF7B /* CharacterListView */ = {
-			isa = PBXGroup;
-			children = (
-				2791EA7D29C33E100036DF7B /* CharacterListView.swift */,
-				2760E1BD29C5ABC600C178B4 /* CharacterListViewCell.swift */,
-			);
-			path = CharacterListView;
-			sourceTree = "<group>";
-		};
 		27A8FB3429B8A63E007EB7D2 = {
 			isa = PBXGroup;
 			children = (
@@ -261,13 +215,11 @@
 			children = (
 				2791EA5B29BB0ECB0036DF7B /* Service */,
 				2791EA5029BB0D160036DF7B /* Model */,
-				2791EA4F29BB0CF40036DF7B /* ViewModel */,
 				2791EA4E29BB0CB60036DF7B /* View */,
-				2791EA4D29BB0CAA0036DF7B /* Resources */,
 				2791EA4C29BB0CA20036DF7B /* Util */,
 				2791EA4B29BB0C910036DF7B /* Base */,
-				27A8FB5129B8A63F007EB7D2 /* Info.plist */,
 				27A8FB4929B8A63E007EB7D2 /* RickAndMortyApp.xcdatamodeld */,
+				27A8FB5129B8A63F007EB7D2 /* Info.plist */,
 			);
 			path = RickAndMortyApp;
 			sourceTree = "<group>";

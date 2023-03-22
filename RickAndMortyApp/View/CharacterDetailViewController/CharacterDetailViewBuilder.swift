@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 class CharacterDetailViewBuilder {
   func build(character:CharacterModel) -> UIViewController? {
     let characterDetailViewStoryboard = UIStoryboard(name: "CharacterDetailViewStoryboard", bundle: nil)

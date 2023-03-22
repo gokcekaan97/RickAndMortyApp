@@ -12,6 +12,7 @@ import Kingfisher
 class CharacterDetailViewController: UIViewController {
 
   public var viewModel: CharacterDetailViewModel!
+  let disposeBag = DisposeBag()
   public var characterDetailView = CharacterDetailView()
   let scrollView: UIScrollView = {
     let view = UIScrollView()
@@ -30,8 +31,9 @@ class CharacterDetailViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .systemYellow
     navigationController?.navigationBar.prefersLargeTitles = true
+    title = viewModel.name.value
     setUpView()
-    setUpViewItems()
+    bindView()
   }
   private func setUpView(){
     view.addSubview(scrollView)
@@ -50,22 +52,19 @@ class CharacterDetailViewController: UIViewController {
       characterDetailView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
     ])
   }
-  private func setUpViewItems(){
-    guard let character = viewModel.character else {return}
-    title = viewModel.character?.name
-    let imageUrl = URL(string: character.image)
-    characterDetailView.imageView.kf.setImage(with: imageUrl)
-    characterDetailView.nameLabel.text = character.name
-    characterDetailView.statusLabel.text = "Status: \(character.status.text)"
-    characterDetailView.locationLabel.text = character.location.name
-    characterDetailView.genderLabel.text = character.gender.text
-    characterDetailView.speciesLabel.text = character.species
-    characterDetailView.originLabel.text = character.origin.name
-    characterDetailView.episodeLabel.text = ""
-    for str in character.episode {
-      characterDetailView.episodeLabel.text! += str + "\n"
-    }
-    
+  private func bindView(){
+    viewModel.name.bind(to: characterDetailView.nameLabel.rx.text).disposed(by: disposeBag)
+    viewModel.status.bind(to: characterDetailView.statusLabel.rx.text).disposed(by: disposeBag)
+    viewModel.location.bind(to: characterDetailView.locationLabel.rx.text).disposed(by: disposeBag)
+    viewModel.origin.bind(to: characterDetailView.originLabel.rx.text).disposed(by: disposeBag)
+    viewModel.gender.bind(to: characterDetailView.genderLabel.rx.text).disposed(by: disposeBag)
+    viewModel.species.bind(to: characterDetailView.speciesLabel.rx.text).disposed(by: disposeBag)
+    characterDetailView.imageView.kf.setImage(with: URL(string: viewModel.image.value))
+    viewModel.episode.subscribe { episodeList in
+      self.characterDetailView.episodeLabel.text = ""
+      for episode in episodeList{
+        self.characterDetailView.episodeLabel.text += episode + "\n"
+      }
+    }.disposed(by: disposeBag)
   }
-
 }
