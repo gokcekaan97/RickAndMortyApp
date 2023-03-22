@@ -13,6 +13,19 @@ class CharacterDetailViewController: UIViewController {
 
   public var viewModel: CharacterDetailViewModel!
   public var characterDetailView = CharacterDetailView()
+  let scrollView: UIScrollView = {
+    let view = UIScrollView()
+    view.showsVerticalScrollIndicator = true
+    view.isDirectionalLockEnabled = true
+    view.showsHorizontalScrollIndicator = false
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  let contentView: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemYellow
@@ -21,13 +34,20 @@ class CharacterDetailViewController: UIViewController {
     setUpViewItems()
   }
   private func setUpView(){
-    view.addSubview(characterDetailView)
+    view.addSubview(scrollView)
     NSLayoutConstraint.activate([
-//      characterDetailView.heightAnchor.constraint(equalToConstant: 1500),
-      characterDetailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      characterDetailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      characterDetailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-      characterDetailView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor)
+      scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+      scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
+    ])
+    scrollView.addSubview(characterDetailView)
+    NSLayoutConstraint.activate([
+      characterDetailView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+      characterDetailView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      characterDetailView.rightAnchor.constraint(equalTo: scrollView.contentLayoutGuide.rightAnchor),
+      characterDetailView.leftAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leftAnchor),
+      characterDetailView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
     ])
   }
   private func setUpViewItems(){

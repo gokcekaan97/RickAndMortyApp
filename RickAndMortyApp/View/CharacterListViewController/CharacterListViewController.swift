@@ -57,7 +57,6 @@ final class CharacterListViewController: UIViewController{
 extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let characterId = viewModel.characters[indexPath.row].id
     guard let myNavigation = self.navigationController else { return }
     let characterDetailCoordinator = CharacterDetailViewCoordinator(router: myNavigation,character: viewModel.characters[indexPath.row])
     characterDetailCoordinator.pushCoordinator(animated: true, completion: nil)
